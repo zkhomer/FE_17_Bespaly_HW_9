@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="asd">dfd</div>
+
+
+    <script>
+        function makeProfileTimer (doSomething){
+let timer_start = performance.now()
+doSomething()
+let timer_end = performance.now()
+return alert(`timer = ${timer_end-timer_start}ms`)
+        }
+//**********************************************************************************************************
+// console.time("test");
+// test(2,4);
+// console.timeEnd("test")
+    </script>
+</body>
+</html>

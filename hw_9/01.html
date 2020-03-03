@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // let arr = [2,4,1,7,5,6,123,124,12,4,124,14,2,2344,1,4,]
+        
+        // for (let k = 0 ; k<arr.length ; k++){
+        // for(let i = 0 ; i<arr.length ; i++){
+        //     if(arr [i]>arr[i+1]){
+        //         [arr[i] , arr[i+1]] = [arr[i+1] ,arr[i]]
+        //     }
+        //     }
+        // function parent(arg ) {
+        //     let frog = 'i m frog ' 
+        //     return function () {
+        //         console.log(arg, frog)
+                
+        //     }
+        // }
+        // let child = parent ("hello!")
+
+        function makeSaver(func){
+    if(typeof func != 'function'){
+        throw new Error('Given parameter should be a function!')
+    }
+    let immutableValue
+    let wasInvoked = false
+
+    return function(){
+        if(!wasInvoked){
+            immutableValue = func()
+            wasInvoked = true
+        }
+        return immutableValue
+    }
+}
+undefined
+var saver2 = makeSaver(() => console.log('saved function called') || [null, undefined, false, '', 0, Math.random()][Math.ceil(Math.random() * 6)])
+var value3 = saver2()
+var value4 = saver2()
+VM63:1 saved function called
+undefined
+value3 === value4
+
+    </script>
+</body>
+</html>
